@@ -1,0 +1,8 @@
+artifacts_root: artifacts
+
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion
+  source_URL: https://github.com/naveenyadav-star/nav_data/raw/8146184c6dcd48e60d651e5642fd741b86b94e1d/winequality-data.zip
+  local_data_file: artifacts/data_ingestion/data.zip
+  unzip_dir: artifacts/data_ingestion
