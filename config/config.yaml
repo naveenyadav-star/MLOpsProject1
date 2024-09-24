@@ -27,3 +27,4 @@ model_evaluation:
   test_data_path: artifacts/data_transformation/test.csv
   model_path: artifacts/model_trainer/model.joblib
   metric_file_name: artifacts/model_evaluation/metrics.json
+  mlflow_uri: "https://dagshub.com/naveen.mentya/MLOpsProject1.mlflow"

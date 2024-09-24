@@ -74,8 +74,8 @@ with mlflow.start_run():
 https://dagshub.com/api/v1/repo-buckets/s3/naveen.mentya
 
 
-MLFLOW_TRACKING_URI=https://dagshub.com/naveen.mentya/MLOpsProject1.mlflow \
-MLFLOW_TRACKING_USERNAME=naveen.mentya \
-MLFLOW_TRACKING_PASSWORD=78f8373456253e6d2366dc54c9a34be62aedf405 \
+MLFLOW_TRACKING_URI=""
+MLFLOW_TRACKING_USERNAME="" \
+MLFLOW_TRACKING_PASSWORD="" \
 python script.py
 Run this to export as env variables:
