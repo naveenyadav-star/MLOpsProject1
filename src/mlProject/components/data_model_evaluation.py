@@ -9,6 +9,10 @@ import joblib
 from mlProject.constants import *
 from mlProject.utils.common import read_yaml, create_directories, save_json
 from mlProject.config.configuration import ModelEvaluationConfig
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 class ModelEvaluation:
     def __init__(self, config: ModelEvaluationConfig):
@@ -34,6 +38,9 @@ class ModelEvaluation:
 
         mlflow.set_registry_uri(self.config.mlflow_uri)
         tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
+        os.environ["MLFLOW_TRACKING_URI"]=self.config.mlflow_uri
+        os.environ["MLFLOW_TRACKING_USERNAME"]= os.getenv("MLFLOW_TRACKING_USERNAME")
+        os.environ["MLFLOW_TRACKING_PASSWORD"]=os.getenv("MLFLOW_TRACKING_PASSWORD")
 
 
         with mlflow.start_run():
@@ -62,6 +69,7 @@ class ModelEvaluation:
                 # https://mlflow.org/docs/latest/model-registry.html#api-workflow
                 mlflow.sklearn.log_model(model, "model", registered_model_name="ElasticnetModel")
             else:
+                print("**********Creaed in Local************")
                 mlflow.sklearn.log_model(model, "model")
 
     
